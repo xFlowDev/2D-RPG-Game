@@ -1,0 +1,28 @@
+### Author: xFlowDev
+
+Notes for developing a 2D RPG Game
+
+### Einfach, zum runterschreiben von Zeug
+
+[02.03.17]
+Programmiersprache definitv C++
+
+Jetzt kann ich es mir entweder richtig schwer machen oder ein bisschen einfacher einsteigen.
+Ich könnte SFML benutzen oder OpenGL oder sogar Vulkan.
+
+Am einfachsten wäre SFML zum jetzigen Standpunkt. Das nimmt mir einiges ab worum ich mich dann nicht mehr kümmern muss.
+SFML bringt Graphics/Networking/Keyboard/Sound/Window. Darum müsste ich mich dann nicht selber kümmern.
+
+OpenGL ist letztendlich nur für die Kommunikation mit der Grafik da.
+Fenstererstellung wäre dann zum Beispiel mit GLFW, GLEW oder so zu machen.
+
+Vulkan ist noch ein bisschen mehr lowlevel als OpenGL.
+Dementsprechend noch schneller.
+Für meinen Einsatz ein bisschen Overkill, aber irgendwo muss man ja anfangen, mit der API.
+
+Shaderprogramming wird nötig, wenn ich OpenGL oder Vulkan nehme, fände ich aber gut.
+
+Scriptsprache entweder Lua oder Python.
+Ich tendiere mehr zu Lua, da Lua mehr bei Spielen zum Einsatz kommt.
+
+### Programmierung
