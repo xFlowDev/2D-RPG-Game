@@ -1,0 +1,10 @@
+*.vcxproj
+*.vcxproj.*
+
+
+SfmlTest/.vs/
+SfmlTest/Debug/
+SfmlTest/SfmlTest.VC.db
+SfmlTest/SfmlTest.sln
+SfmlTest/SfmlTest/Debug/
+resource.h
