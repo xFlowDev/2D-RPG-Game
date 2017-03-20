@@ -25,4 +25,14 @@ Shaderprogramming wird nötig, wenn ich OpenGL oder Vulkan nehme, fände ich abe
 Scriptsprache entweder Lua oder Python.
 Ich tendiere mehr zu Lua, da Lua mehr bei Spielen zum Einsatz kommt.
 
+[20.03.17]
+Ich habe mich für SFML entschieden.
+Weil ich SFML inzwischen ein wenig kenne.
+
+Basis Setup gemacht, SFML-Library verlinkt und included.
+
+Menu angefangen aufzubauen, drei bunte Buttons die aktuell noch nichts machen.
+Aber ich habe die mit der Referenz des GameWindow gedrawt.
+
+
 ### Programmierung
