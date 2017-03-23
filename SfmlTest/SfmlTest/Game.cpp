@@ -30,27 +30,43 @@ void Game::GameLoop() {
 }
 
 //Jede Klasse ist für ihre eigenen Updates zuständig
+//GameWindow muss mitgegeben werden damit ich zugriff auf die Maus-Position relativ zum GameWindow habe
 void Game::Update() {
-	if (GameState == Menu)
+	//if (GameState == Menu)
+	//	menuScreen.Update(GameWindow, GameState);
+	//else if (GameState == Playing)
+	//	gameScreen.Update(GameWindow, GameState);
+
+	switch (GameState)
 	{
+	case Menu:
 		menuScreen.Update(GameWindow, GameState);
-	}
-	else if (GameState == Playing)
-	{
+		break;
+	case Options:
+		break;
+	case Playing:
 		gameScreen.Update(GameWindow, GameState);
+		break;
+	case Pause:
+		break;
+	case Exit:
+		break;
+	default:
+		break;
 	}
+
 }
 
 //Jede Klasse zeichnet ihren eigenen Kram
 void Game::Draw() {
 	GameWindow.clear();
+
+	//Referenz von GameWindow wird übergegeben
+	//ein Objekt zeichet alles
 	if (GameState == Menu)
-	{
 		menuScreen.Draw(GameWindow);
-	}
 	else if (GameState == Playing)
-	{
 		gameScreen.Draw(GameWindow);
-	}
+
 	GameWindow.display();
 }

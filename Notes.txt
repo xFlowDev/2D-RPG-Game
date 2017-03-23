@@ -4,6 +4,15 @@
 # Languange:      German                             #
 ######################################################
 
+######################################################
+# Im Text werden [Tags] benutzt,                     #
+# um Bookmarks zu setzen.                            #
+# [TODO] - Aufgabe die noch zu erledigen ist         #
+# [NOTE] - Hinweis für später                        #
+# [BUG]  - Bug der aufgetreten ist                   #
+# [DONE] - Nachverfolgung für später                 #
+######################################################
+
 # [02.03.17]
 Programmiersprache definitv C++
 
@@ -39,5 +48,15 @@ Aber ich habe die mit der Referenz des GameWindow gedrawt.
 # [23.03.17]
 GameState wird als Pointer an die jeweilige Update Funktion übergeben.
 In den Update Funktionen kann dann der GameState gesetzt werden und in Game wird dann das richtige gerendert und geupdatet.
+
+Buttons funktionieren jetzt. Allerdings kann nur was passieren wenn der Play-Button gedrückt wird.
+
+GameLoop auf 60 Updates pro Sekunde beschränken.
+Draw kann öfter aufgerufen werden. Da nichts an der Spiel-Logik verändert wird.
+Es kommt dann einfach nur flüßiger rüber.
+[TODO] für später: Möglichkeit geben die FPS zu beschränken. Einfach als Übung.
+
+[TODO] Restliche Screens implementieren
+[NOTE] Aktuell noch nicht nötig
 
 # [23.03.17]
