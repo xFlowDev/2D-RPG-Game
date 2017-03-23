@@ -2,6 +2,8 @@
 
 enum GameState {
 	Menu,
+	Options,
 	Playing,
-	Pause
+	Pause,
+	Exit
 };

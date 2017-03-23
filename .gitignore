@@ -8,3 +8,4 @@ SfmlTest/SfmlTest.VC.db
 SfmlTest/SfmlTest.sln
 SfmlTest/SfmlTest/Debug/
 resource.h
+*.opendb

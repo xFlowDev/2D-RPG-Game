@@ -2,7 +2,7 @@
 
 Game::Game() {
 	GameWindow.create(sf::VideoMode(WIDTH, HEIGHT), "2D RPG Rougelike");
-	gameState = Menu;
+	GameState = Menu;
 	GameLoop();
 }
 Game::~Game() {
@@ -31,30 +31,26 @@ void Game::GameLoop() {
 
 //Jede Klasse ist für ihre eigenen Updates zuständig
 void Game::Update() {
-	if (gameState == Menu)
+	if (GameState == Menu)
 	{
-		menuScreen.Update();
+		menuScreen.Update(GameWindow, GameState);
 	}
-	else if (gameState == Playing)
+	else if (GameState == Playing)
 	{
-		//gameScreen.Update();
+		gameScreen.Update(GameWindow, GameState);
 	}
 }
 
 //Jede Klasse zeichnet ihren eigenen Kram
 void Game::Draw() {
 	GameWindow.clear();
-	drawActiveScreen();
-	GameWindow.display();
-}
-
-void Game::drawActiveScreen() {
-	if (gameState == Menu)
+	if (GameState == Menu)
 	{
 		menuScreen.Draw(GameWindow);
 	}
-	//else if (gameState == Playing)
-	//{
-	//	//gameScreen.Draw();
-	//}
+	else if (GameState == Playing)
+	{
+		gameScreen.Draw(GameWindow);
+	}
+	GameWindow.display();
 }

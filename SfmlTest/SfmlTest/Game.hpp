@@ -11,13 +11,14 @@ class Game {
 public:
 	Game();
 	~Game();
+
 private:
 	const int WIDTH = 800;
 	const int HEIGHT = 600;
 	sf::RenderWindow GameWindow;
 
-	GameState gameState;
-
+	GameState GameState;
+	
 	double FPS;
 	double DeltaTime;
 	double TimeStarted;
@@ -26,7 +27,7 @@ private:
 	void Update();
 	void Draw();
 
-	GameScreen gameScreen;
 	MenuScreen menuScreen;
-	void drawActiveScreen();
+	GameScreen gameScreen;
+
 };

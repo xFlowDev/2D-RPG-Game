@@ -1,10 +1,10 @@
-### Author: xFlowDev
+######################################################
+# Author:         xFlowDev                           #
+# Description:    Notes for developing a 2D RPG Game #
+# Languange:      German                             #
+######################################################
 
-Notes for developing a 2D RPG Game
-
-### Einfach, zum runterschreiben von Zeug
-
-[02.03.17]
+# [02.03.17]
 Programmiersprache definitv C++
 
 Jetzt kann ich es mir entweder richtig schwer machen oder ein bisschen einfacher einsteigen.
@@ -24,8 +24,9 @@ Shaderprogramming wird nötig, wenn ich OpenGL oder Vulkan nehme, fände ich abe
 
 Scriptsprache entweder Lua oder Python.
 Ich tendiere mehr zu Lua, da Lua mehr bei Spielen zum Einsatz kommt.
+# [02.03.17]
 
-[20.03.17]
+# [20.03.17]
 Ich habe mich für SFML entschieden.
 Weil ich SFML inzwischen ein wenig kenne.
 
@@ -33,6 +34,10 @@ Basis Setup gemacht, SFML-Library verlinkt und included.
 
 Menu angefangen aufzubauen, drei bunte Buttons die aktuell noch nichts machen.
 Aber ich habe die mit der Referenz des GameWindow gedrawt.
+# [20.03.17]
 
+# [23.03.17]
+GameState wird als Pointer an die jeweilige Update Funktion übergeben.
+In den Update Funktionen kann dann der GameState gesetzt werden und in Game wird dann das richtige gerendert und geupdatet.
 
-### Programmierung
+# [23.03.17]
