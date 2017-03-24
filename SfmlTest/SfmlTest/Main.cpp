@@ -3,5 +3,6 @@
 int main()
 {
 	Game NewGame;
+	NewGame.GameLoop();
 	return 0;
 }
