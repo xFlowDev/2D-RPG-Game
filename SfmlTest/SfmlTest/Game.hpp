@@ -31,7 +31,6 @@ private:
 
 	float frameTime;
 	float deltaTimeMs;
-	float deltaTimeSaccumulator;
 	int Updates;
 	int FPS;
 
@@ -42,7 +41,7 @@ private:
 	void Update();
 	void Draw();
 
-	void drawGameStatistics();
+	void drawDebugInfo();
 
 	MenuScreen menuScreen;
 	GameScreen gameScreen;

@@ -58,5 +58,34 @@ Es kommt dann einfach nur flüßiger rüber.
 
 [TODO] Restliche Screens implementieren
 [NOTE] Aktuell noch nicht nötig
-
 # [23.03.17]
+
+# [27.03.17]
+GameLoop läuft jetzt mit ca 60 Updates pro Sekunde
+irgendwas stimmt da aber noch nicht, die Schwankung dabei sind mir viel zu groß.
+Denn zwischen 40 und 80 Updates/s ist alles dabei.
+[TODO] Fixed TimeStep nochmal überprüfen
+
+[TODO] Menü Buttons ordentlich mit Fonts und Highlight(Animation) wenn drüber gehovert wird.
+
+GameScreen:
+Objekte die ich erstellen muss
+    - Map
+    - Entitäten
+        -- Spieler
+        -- Gegner
+        -- NPCs
+    - Andere Objekte
+        -- unzerstörbar
+            --- Bäume
+            --- Steine
+        -- Zerstörbar
+            --- Kisten
+            --- Vasen
+            --- usw
+
+Jedes mal zufällig generierte Map. 
+Für prozedurale Map Generierung siehe: https://www.youtube.com/playlist?list=PLFt_AvWsXl0eBW2EiBtl_sxmDtSgZBxB3 
+
+
+# [27.03.17]
