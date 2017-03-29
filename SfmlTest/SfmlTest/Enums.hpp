@@ -7,3 +7,9 @@ enum GameState {
 	Pause,
 	Exit
 };
+
+enum EntityType {
+	Player,
+	Enemy,
+	NPC
+};

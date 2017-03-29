@@ -15,9 +15,3 @@ void Player::Update(sf::RenderWindow &GameWindow, GameState &GameState) {
 void Player::Draw(sf::RenderWindow &GameWindow) {
 
 }
-
-void Player::setTexture() {
-}
-
-void Player::setSprite() {
-}

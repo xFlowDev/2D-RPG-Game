@@ -9,7 +9,5 @@ public:
 	void Update(sf::RenderWindow &, GameState &) override;
 	void Draw(sf::RenderWindow &) override;
 private:
-	void setTexture() override;
-	void setSprite() override;
 };
 

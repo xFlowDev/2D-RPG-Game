@@ -86,6 +86,12 @@ Objekte die ich erstellen muss
 
 Jedes mal zufällig generierte Map. 
 Für prozedurale Map Generierung siehe: https://www.youtube.com/playlist?list=PLFt_AvWsXl0eBW2EiBtl_sxmDtSgZBxB3 
-
-
 # [27.03.17]
+
+# [29.03.17]
+[TODO] Error Handling implementieren
+Welche wege gibt es da?
+Was ist Best-Practice?
+
+
+# [29.03.17]

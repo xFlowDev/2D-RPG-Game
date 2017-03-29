@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 
 #include "Enums.hpp"
+#include "Player.hpp"
 
 class GameScreen
 {
@@ -13,4 +14,6 @@ public:
 	void Draw(sf::RenderWindow &);
 private:
 	sf::RectangleShape TestBlock;
+
+	Player player;
 };
