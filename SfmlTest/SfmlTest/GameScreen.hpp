@@ -14,6 +14,5 @@ public:
 	void Draw(sf::RenderWindow &);
 private:
 	sf::RectangleShape TestBlock;
-
-	Player player;
+	Player Player;
 };

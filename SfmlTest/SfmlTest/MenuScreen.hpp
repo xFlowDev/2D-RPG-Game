@@ -11,6 +11,7 @@ public:
 	MenuScreen();
 	void Update(sf::RenderWindow &, GameState&);
 	void Draw(sf::RenderWindow &);
+	//void Init();
 	void placeButton(sf::RectangleShape &, sf::Color, sf::Vector2f);
 
 private:

@@ -8,8 +8,8 @@ enum GameState {
 	Exit
 };
 
-enum EntityType {
-	Player,
-	Enemy,
-	NPC
-};
+//enum EntityType {
+//	Player,
+//	Enemy,
+//	NPC
+//};

@@ -1,0 +1,9 @@
+*.opendb
+*.enc
+*.db
+*.suo
+*.pdb
+*.*log
+*.idb
+*.obj
+SfmlTest/Debug

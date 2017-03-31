@@ -56,7 +56,7 @@ Draw kann öfter aufgerufen werden. Da nichts an der Spiel-Logik verändert wird
 Es kommt dann einfach nur flüßiger rüber.
 [TODO] für später: Möglichkeit geben die FPS zu beschränken. Einfach als Übung.
 
-[TODO] Restliche Screens implementieren
+[TODO] Restliche Screens implementieren, damit meine ich Options, Exit, Pause und was noch so anfällt.
 [NOTE] Aktuell noch nicht nötig
 # [23.03.17]
 
@@ -85,6 +85,7 @@ Objekte die ich erstellen muss
             --- usw
 
 Jedes mal zufällig generierte Map. 
+[TODO] Map generieren
 Für prozedurale Map Generierung siehe: https://www.youtube.com/playlist?list=PLFt_AvWsXl0eBW2EiBtl_sxmDtSgZBxB3 
 # [27.03.17]
 
@@ -92,6 +93,25 @@ Für prozedurale Map Generierung siehe: https://www.youtube.com/playlist?list=PL
 [TODO] Error Handling implementieren
 Welche wege gibt es da?
 Was ist Best-Practice?
-
-
 # [29.03.17]
+
+# [30.03.17]
+Dadurch das C++ alles instanziert sobald die Variable deklariert wird,
+werden natürlich alle Konstruktoren aufgerufen und da ich die Initialisierung darin machen,
+werden sofort beim Starten alle Ressourcen geladen.
+Das muss ich verhindern und alles erst initialisieren wenn ich es benötige. Zumindest was das eigentliche Spiel angeht.
+Das Menü kann direkt beim Starten geladen werden.
+Bei Klassen, bei denen spätere Initialisierung nötig ist, baue ich eine Init-Funktion ein.
+Das trifft nur auf die Screens zu.
+Die Inititialisierung darf nur dann stattfinden wenn ein anderer Screen angezeigt werden soll.
+Idee: Ich baue eine Funktion, die den Screen-Wechsel ausführt.
+    Dazu nutze ich dann ein Boolean um zu signalisieren führe die FUnktion zum wechsel aus.
+    Darauf prüfe ich dann in der jeweiligen Update Funktion.
+
+[NOTE][TODO] Ich muss dringend daran denken, dass die gelinkten Libs von SFML aktuell im "Debug-Mode" geladen werden.
+Die müssen später durch die Standard DLLs (ohne Zusatz von "d" zum Beispiel) ersetzt werden.
+
+[TODO] Entities irgendwie kennzeichnen, erst habe ich mir überlegt, das mit einer Enum zu machen
+Dabei war aber das Problem, dass das Enum EntityType Player enthielt und das mit der Klasse Player kolidiert.
+
+# [30.03.17]

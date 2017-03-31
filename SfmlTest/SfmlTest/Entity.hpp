@@ -1,7 +1,5 @@
 #pragma once
 
-#include <string>
-
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
@@ -11,13 +9,15 @@
 class Entity {
 public:
 	Entity();
+	Entity(sf::Vector2f);
 	~Entity();
 
 	virtual void Update(sf::RenderWindow &, GameState &);
 	virtual void Draw(sf::RenderWindow &);
 
 	virtual void setSprite(std::string);
-	
+	virtual sf::Sprite getSprite();
+
 	virtual void setSize(sf::Vector2f);
 	virtual sf::Vector2f getSize();
 
@@ -36,7 +36,8 @@ protected:
 	sf::Texture Texture;
 	sf::Sprite Sprite;
 
-	EntityType EntityType;
+	//TODO Wie kann ich die Entities kennzeichnen?
+	//EntityType EntityType;
 
 	sf::Vector2f Size;
 	sf::Vector2f Postition;
