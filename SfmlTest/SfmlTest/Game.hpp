@@ -20,11 +20,13 @@ public:
 	~Game();
 	void GameLoop();
 private:
-	const int WIDTH = 800;
-	const int HEIGHT = 600;
+	const int WIDTH = 1200;
+	const int HEIGHT = 900;
 	sf::RenderWindow GameWindow;
-
+	
 	GameState GameState;
+	MenuScreen menuScreen = MenuScreen(WIDTH, HEIGHT);
+	GameScreen gameScreen = GameScreen(WIDTH, HEIGHT);
 
 	//timer: Für das Messen der Zeit vom ersten Starten des GameLoops
 	//currentTime: enthällt immer die Zeit zu der die Updates gemessen werden
@@ -51,6 +53,5 @@ private:
 
 	void setDebugText();
 
-	MenuScreen menuScreen;
-	GameScreen gameScreen;
+
 };

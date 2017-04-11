@@ -41,7 +41,7 @@ void Game::GameLoop() {
 		now = std::chrono::high_resolution_clock::now();
 		diff = now - timer;
 		if (diff > std::chrono::seconds(1)) {
-			timer += std::chrono::milliseconds(1000);
+			timer += std::chrono::seconds(1);
 			UpdatesText.setString("UPS: " + std::to_string(Updates));
 			FpsText.setString("FPS: " + std::to_string(FPS));
 			FPS = 0;
@@ -55,32 +55,33 @@ void Game::GameLoop() {
 void Game::Update() {
 	switch (GameState)
 	{
-	case Menu:
-		menuScreen.Update(GameWindow, GameState);
-		break;
-	case Options:
-		break;
-	case Playing:
-		gameScreen.Update(GameWindow, GameState);
-		break;
-	case Pause:
-		break;
-	case Exit:
-		break;
-	default:
-		break;
+		case Menu:
+			menuScreen.Update(GameWindow, GameState);
+			break;
+		case Options:
+			//optionsScreen.Update(GameWindow, GameState);
+			break;
+		case Playing:
+			gameScreen.Update(GameWindow, GameState);
+			break;
+		case Pause:
+			break;
+		case Exit:
+			GameWindow.close();
+			break;
+		default:
+			break;
 	}
-
 }
 
 //Jede Klasse zeichnet ihren eigenen Kram
 void Game::Draw() {
 	GameWindow.clear();
-	
+
 	//Draw Debug Info
 	GameWindow.draw(FpsText);
 	GameWindow.draw(UpdatesText);
-	
+
 
 	//Referenz von GameWindow wird übergegeben
 	//ein Objekt zeichnet alles

@@ -9,10 +9,12 @@
 class GameScreen
 {
 public:
-	GameScreen();
+	GameScreen(int, int);
 	void Update(sf::RenderWindow &, GameState &);
 	void Draw(sf::RenderWindow &);
 private:
+	int WIDTH, HEIGHT;
+
 	sf::RectangleShape TestBlock;
 	Player Player;
 };

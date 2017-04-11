@@ -1,6 +1,9 @@
 #include "GameScreen.hpp"
 
-GameScreen::GameScreen() {
+GameScreen::GameScreen(int _WIDTH, int _HEIGHT) {
+	WIDTH = _WIDTH;
+	HEIGHT = _HEIGHT;
+
 	TestBlock.setFillColor(sf::Color::Green);
 	TestBlock.setSize(sf::Vector2f(600, 400));
 	TestBlock.setPosition(sf::Vector2f(100, 100));

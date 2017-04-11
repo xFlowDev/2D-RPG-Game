@@ -2,7 +2,7 @@
 #include <iostream>
 
 Player::Player() {
-	Velocity = 0.5f;
+	Velocity = 5.f;
 
 }
 

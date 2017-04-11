@@ -1,42 +1,41 @@
 #include "MenuScreen.hpp"
 
-MenuScreen::MenuScreen() {
-	ButtonSize.x = 150;
-	ButtonSize.y = 50;
+MenuScreen::MenuScreen(int _WIDTH, int _HEIGHT) {
+	WIDTH = _WIDTH;
+	HEIGHT = _HEIGHT;
 
-	placeButton(PlayButton, sf::Color::Red, sf::Vector2f(325, 225));
-	placeButton(OptionsButton, sf::Color::Green, sf::Vector2f(325, 225 + ButtonSize.y));
-	placeButton(ExitButton, sf::Color::Blue, sf::Vector2f(325, 225 + (2 * ButtonSize.y)));
+	//TODO GameTitle hier erstellen
+	setTitleText();
+
+	//Setze all Buttons an ihre Stelle relativ zum Bildschrim
+	ButtonSize.x = 300;
+	ButtonSize.y = 100;
+	float spaceBetweenButtons = 50;
+	float vertSplit = 3;
+	placeButton(PlayButton, sf::Color::Red, sf::Vector2f(WIDTH / 2 - ButtonSize.x / 2, HEIGHT / vertSplit));
+	placeButton(OptionsButton, sf::Color::Green, sf::Vector2f(WIDTH / 2 - ButtonSize.x / 2, HEIGHT / vertSplit + ButtonSize.y + spaceBetweenButtons));
+	placeButton(ExitButton, sf::Color::Blue, sf::Vector2f(WIDTH / 2 - ButtonSize.x / 2, HEIGHT / vertSplit + (2 * ButtonSize.y) + spaceBetweenButtons * 2));
 }
 
-//void MenuScreen::Init() {
-//
-//}
-
-//überwacht die Funktionen im Menu
-//Button-Press etc
 void MenuScreen::Update(sf::RenderWindow &gameWindow, GameState &gameState) {
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 	{
 		if (isButtonPressed(PlayButton, gameWindow))
-		{
 			gameState = Playing;
-		}
 		else if (isButtonPressed(OptionsButton, gameWindow))
-		{
 			gameState = Options;
-		}
 		else if (isButtonPressed(ExitButton, gameWindow))
-		{
 			gameState = Exit;
-		}
 	}
 }
 
 void MenuScreen::Draw(sf::RenderWindow &gameWindow) {
+	gameWindow.draw(TitleText);
+
 	gameWindow.draw(PlayButton);
 	gameWindow.draw(OptionsButton);
 	gameWindow.draw(ExitButton);
+
 }
 
 void MenuScreen::placeButton(sf::RectangleShape &xButton, sf::Color xColor, sf::Vector2f xButtonPosition) {
@@ -55,4 +54,23 @@ bool MenuScreen::isButtonPressed(sf::RectangleShape xButton, sf::RenderWindow &x
 		return true;
 
 	return false;
+}
+
+void MenuScreen::setTitleText()
+{
+	if (!TitleFont.loadFromFile("Assets\\Fonts\\wintersolstice.ttf"))
+	{
+		std::cerr << "Error Loading Tilte Font" << std::endl;
+	}
+	else {
+		TitleText.setString(GameTitle);
+		TitleText.setFont(TitleFont);
+		TitleText.setCharacterSize(TitleCharSize);
+		TitleText.setFillColor(TitleTextColor);
+
+		float textWidth = TitleText.getLocalBounds().width;
+		TitlePosition = sf::Vector2f(WIDTH / 2.f - textWidth / 2.f, 0);
+		TitleText.setPosition(TitlePosition);
+
+	}
 }
