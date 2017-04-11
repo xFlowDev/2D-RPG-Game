@@ -11,10 +11,10 @@ GameScreen::GameScreen() {
 }
 
 void GameScreen::Update(sf::RenderWindow &GameWindow, GameState &GameState) {
-
+	Player.Update(GameWindow, GameState);
 }
 
 void GameScreen::Draw(sf::RenderWindow &GameWindow) {
 	GameWindow.draw(TestBlock);
-	GameWindow.draw(Player.getSprite());
+	Player.Draw(GameWindow);
 }

@@ -25,18 +25,9 @@ private:
 
 	std::chrono::high_resolution_clock::time_point Timer;
 
-	std::chrono::high_resolution_clock::time_point currentTime;
-	std::chrono::high_resolution_clock::time_point startTime;
-	std::chrono::high_resolution_clock::duration deltaTime;
-
-	float frameTime;
-	float deltaTimeMs;
 	int Updates;
 	int FPS;
 
-	sf::Text FpsText;
-	sf::Text DeltaTimeText;
-	sf::Text DebugMessage;
 
 	void Update();
 	void Draw();
@@ -45,5 +36,4 @@ private:
 
 	MenuScreen menuScreen;
 	GameScreen gameScreen;
-
 };

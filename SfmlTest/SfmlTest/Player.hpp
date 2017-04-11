@@ -10,5 +10,6 @@ public:
 	void Update(sf::RenderWindow &, GameState &) override;
 	void Draw(sf::RenderWindow &) override;
 private:
+	void Move();
 };
 

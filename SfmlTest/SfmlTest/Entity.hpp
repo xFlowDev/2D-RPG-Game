@@ -40,7 +40,7 @@ protected:
 	//EntityType EntityType;
 
 	sf::Vector2f Size;
-	sf::Vector2f Postition;
+	sf::Vector2f Position;
 	float Velocity;
 
 	std::string Name;

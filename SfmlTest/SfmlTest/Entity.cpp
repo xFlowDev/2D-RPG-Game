@@ -3,14 +3,14 @@
 Entity::Entity() {
 }
 Entity::Entity(sf::Vector2f startingPosition) {
-	Postition = startingPosition;
+	Position = startingPosition;
 }
 Entity::~Entity() {
 }
 
 void Entity::Update(sf::RenderWindow &GameWindow, GameState &GameState) {
 	//Leer da das nur die Super-Klasse ist
-	Sprite.setPosition(Postition);
+	Sprite.setPosition(Position);
 }
 void Entity::Draw(sf::RenderWindow &GameWindow) {
 	//Leer da das nur die Super-Klasse ist
@@ -42,12 +42,12 @@ sf::Vector2f Entity::getSize() {
 }
 
 void Entity::setPosition(sf::Vector2f position) {
-	Postition = position;
+	Position = position;
 	Sprite.setPosition(position);
 }
 
 sf::Vector2f Entity::getPosition() {
-	return Postition;
+	return Position;
 }
 
 void Entity::setVelocity(float velocity) {
