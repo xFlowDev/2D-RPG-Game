@@ -1,10 +1,12 @@
 #pragma once
+#ifndef PLAYER_H
+#define PLAYER_H
+
 #include "Entity.hpp"
 
 class Player : public Entity {
 public:
 	Player();
-	Player(sf::Vector2f);
 	~Player();
 
 	void Update(sf::RenderWindow &, GameState &) override;
@@ -12,4 +14,4 @@ public:
 private:
 	void Move();
 };
-
+#endif // !PLAYER_H

@@ -31,6 +31,18 @@
     <Filter Include="Headerdateien\Entities">
       <UniqueIdentifier>{0affe37e-2908-4559-8975-063206ee5cba}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Quelldateien\Map">
+      <UniqueIdentifier>{5893abd6-6fbc-4077-9de5-5bc65103348d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\Map">
+      <UniqueIdentifier>{8da38f6f-9198-465d-8adb-fe016f9cf220}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\TilesetManager">
+      <UniqueIdentifier>{c3b8f25a-2aae-48ef-81a4-14ee2d3c446b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\TilesetManager">
+      <UniqueIdentifier>{1a7a363d-713f-4217-98a2-cd2e303d73e8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -51,15 +63,18 @@
     <ClCompile Include="Player.cpp">
       <Filter>Quelldateien\Entities</Filter>
     </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>Quelldateien\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="TilesetManager.cpp">
+      <Filter>Quelldateien\TilesetManager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.hpp">
       <Filter>Headerdateien\Game</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="Enums.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="GameScreen.hpp">
@@ -73,6 +88,15 @@
     </ClInclude>
     <ClInclude Include="Player.hpp">
       <Filter>Headerdateien\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Variables.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.hpp">
+      <Filter>Headerdateien\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="TilesetManager.hpp">
+      <Filter>Headerdateien\TilesetManager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

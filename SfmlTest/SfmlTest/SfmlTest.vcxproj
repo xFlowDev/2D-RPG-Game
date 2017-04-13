@@ -152,12 +152,16 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameScreen.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Map.cpp" />
     <ClCompile Include="MenuScreen.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="TilesetManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Entity.hpp" />
-    <ClInclude Include="Enums.hpp" />
+    <ClInclude Include="Map.hpp" />
+    <ClInclude Include="TilesetManager.hpp" />
+    <ClInclude Include="Variables.hpp" />
     <ClInclude Include="Game.hpp" />
     <ClInclude Include="GameScreen.hpp" />
     <ClInclude Include="MenuScreen.hpp" />

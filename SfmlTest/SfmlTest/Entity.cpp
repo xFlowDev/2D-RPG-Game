@@ -24,9 +24,9 @@ void Entity::setSprite(std::string path) {
 	//Dafür sollte ich mir vielleicht was anderes ausdenken
 	//Error Handling und so
 	if (!Texture.loadFromFile(path))
-		exit(EXIT_FAILURE);
-
-	Sprite.setTexture(Texture);
+		std::cerr << "Error Loading File: " << path << std::endl;
+	else
+		Sprite.setTexture(Texture);
 }
 
 sf::Sprite Entity::getSprite() {

@@ -1,10 +1,6 @@
 #include "MenuScreen.hpp"
 
-MenuScreen::MenuScreen(int _WIDTH, int _HEIGHT) {
-	WIDTH = _WIDTH;
-	HEIGHT = _HEIGHT;
-
-	//TODO GameTitle hier erstellen
+MenuScreen::MenuScreen() {
 	setTitleText();
 
 	//Setze all Buttons an ihre Stelle relativ zum Bildschrim
@@ -31,7 +27,7 @@ void MenuScreen::Update(sf::RenderWindow &gameWindow, GameState &gameState) {
 
 void MenuScreen::Draw(sf::RenderWindow &gameWindow) {
 	gameWindow.draw(TitleText);
-
+	//TODO Buttons durch Texte ersetzen
 	gameWindow.draw(PlayButton);
 	gameWindow.draw(OptionsButton);
 	gameWindow.draw(ExitButton);
@@ -66,11 +62,10 @@ void MenuScreen::setTitleText()
 		TitleText.setString(GameTitle);
 		TitleText.setFont(TitleFont);
 		TitleText.setCharacterSize(TitleCharSize);
-		TitleText.setFillColor(TitleTextColor);
-
+		//damit die Width berechnet werden kann, müssen String, Font und CharSize vorher festgelegt werden
 		float textWidth = TitleText.getLocalBounds().width;
 		TitlePosition = sf::Vector2f(WIDTH / 2.f - textWidth / 2.f, 0);
 		TitleText.setPosition(TitlePosition);
-
+		TitleText.setFillColor(TitleTextColor);
 	}
 }

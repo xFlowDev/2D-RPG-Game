@@ -64,7 +64,7 @@ Es kommt dann einfach nur flüßiger rüber.
 GameLoop läuft jetzt mit ca 60 Updates pro Sekunde
 irgendwas stimmt da aber noch nicht, die Schwankung dabei sind mir viel zu groß.
 Denn zwischen 40 und 80 Updates/s ist alles dabei.
-[TODO] Fixed TimeStep nochmal überprüfen
+[DONE] Fixed TimeStep nochmal überprüfen
 
 [TODO] Menü Buttons ordentlich mit Fonts und Highlight(Animation) wenn drüber gehovert wird.
 
@@ -108,10 +108,65 @@ Idee: Ich baue eine Funktion, die den Screen-Wechsel ausführt.
     Dazu nutze ich dann ein Boolean um zu signalisieren führe die FUnktion zum wechsel aus.
     Darauf prüfe ich dann in der jeweiligen Update Funktion.
 
+[NOTE 11.04.17] Ich initialisie die Screens sofort beim starten des Spiels, das sollte ich noch ändern.
+    -> Noch zieht das nicht viele Ressourcen aber wenn das später mehr werden, wirkt sich das auf die Leistung aus.
+
 [NOTE][TODO] Ich muss dringend daran denken, dass die gelinkten Libs von SFML aktuell im "Debug-Mode" geladen werden.
 Die müssen später durch die Standard DLLs (ohne Zusatz von "d" zum Beispiel) ersetzt werden.
 
 [TODO] Entities irgendwie kennzeichnen, erst habe ich mir überlegt, das mit einer Enum zu machen
 Dabei war aber das Problem, dass das Enum EntityType Player enthielt und das mit der Klasse Player kolidiert.
-
+[NOTE 11.04.17] Könnte mit Namespaces gelöst werden
 # [30.03.17]
+
+# [11.04.17]
+Endlich läuft der GameLoop ordentlich.
+Es hatte was damit zu tun, dass ich keinen accumulator hatte.
+Siehe Kommentare im Quellcode(Game.hpp), dort ist das genauer beschrieben.
+
+Im Menü wird jetzt der GameTitle angezeigt.
+Und die Buttons sowie auch der GameTitle sind relativ zum GameWindow positioniert.
+
+[TODO] Charaktererstellung
+Dafür muss ich ein komplettes neues Menu aufbauen.
+
+[TODO] Maperzeugung
+Siehe Zeile 89
+
+[TODO] Spieleraktionen
+Bewegen kann der Spieler sich schon, aber mehr noch nicht.
+Zu den Aktionen gehören:
+    - Angreifen
+        - Zauber(?)
+        - Spezial-Angriffe
+    - Schaden nehmen
+    - Leben verändern
+    - Energie verändern
+    - Animation
+    - Sounds zu den jeweiligen Aktionen(Das kommt ganz zum Schluss)
+
+# [11.04.17]
+# [12.04.17]
+[DONE] Header Guards für alle Header definieren 
+# [12.04.17]
+# [13.04.17]
+Prozedurale Map Generierung lasse ich erstmal weg.
+Ich werde Pixel Maps verwenden.
+Tileset dafür habe ich schon.
+Dann zeichne ich eine Map wo ein Pixel einem Tile entspricht.
+Die Map soll dann größer als der Screen sein.
+
+Farbcodes für Pixelmap Tiles:
+Außenrand:
+    - Hex: 915A2A
+    - RGB: 145, 90, 42
+Wasser:
+    - Hex: 2146FF
+    - RGB: 33, 70, 255
+Gras:
+    - Hex: 009102
+    - RGB: 0, 145, 2
+
+
+
+# [13.04.17]

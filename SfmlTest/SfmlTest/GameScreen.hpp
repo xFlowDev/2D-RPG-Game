@@ -1,20 +1,26 @@
 #pragma once
-#include <SFML/System.hpp>
-#include <SFML/Window.hpp>
-#include <SFML/Graphics.hpp>
+#ifndef GAMESCREEN_H
+#define GAMESCREEN_H
 
-#include "Enums.hpp"
+#include "Variables.hpp"
+#include "TilesetManager.hpp"
 #include "Player.hpp"
+#include "Map.hpp"
 
-class GameScreen
-{
+class GameScreen {
 public:
-	GameScreen(int, int);
+	GameScreen();
 	void Update(sf::RenderWindow &, GameState &);
 	void Draw(sf::RenderWindow &);
 private:
-	int WIDTH, HEIGHT;
+	bool isInitialzed = false;
 
-	sf::RectangleShape TestBlock;
-	Player Player;
+	TilesetManager *tilesetManagerPtr = nullptr;
+	sf::Sprite test;
+	
+	Player player;
+	Map map;
+
+	void Init();
 };
+#endif // !GAMESCREEN_H

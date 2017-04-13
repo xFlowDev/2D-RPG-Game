@@ -1,18 +1,13 @@
 #pragma once
-
-#include <SFML/System.hpp>
-#include <SFML/Window.hpp>
-#include <SFML/Graphics.hpp>
+#ifndef GAME_H
+#define GAME_H
 
 #include <chrono>
 #include <iostream>
 
-#include "Enums.hpp"
+#include "Variables.hpp"
 #include "GameScreen.hpp"
 #include "MenuScreen.hpp"
-
-#define TIME_POINT std::chrono::time_point<std::chrono::high_resolution_clock>
-#define DURATION std::chrono::duration<double>
 
 class Game {
 public:
@@ -20,13 +15,11 @@ public:
 	~Game();
 	void GameLoop();
 private:
-	const int WIDTH = 1200;
-	const int HEIGHT = 900;
 	sf::RenderWindow GameWindow;
-	
+
 	GameState GameState;
-	MenuScreen menuScreen = MenuScreen(WIDTH, HEIGHT);
-	GameScreen gameScreen = GameScreen(WIDTH, HEIGHT);
+	MenuScreen menuScreen;
+	GameScreen gameScreen;
 
 	//timer: Für das Messen der Zeit vom ersten Starten des GameLoops
 	//currentTime: enthällt immer die Zeit zu der die Updates gemessen werden
@@ -42,12 +35,12 @@ private:
 	const int DebugFontSize = 18;
 	sf::Color DebugTextColor = sf::Color::White;
 	sf::Font DebugFont;
-	sf::Vector2f FpsTextPosition = sf::Vector2f(0,0);
+	sf::Vector2f FpsTextPosition = sf::Vector2f(0.f, 0.f);
 	sf::Text FpsText;
-	sf::Vector2f UpdatesTextPosition = sf::Vector2f(0, DebugFontSize + 6);
+	sf::Vector2f UpdatesTextPosition = sf::Vector2f(0.f, DebugFontSize + 6.f);
 	sf::Text UpdatesText;
 
-	
+
 	void Update();
 	void Draw();
 
@@ -55,3 +48,4 @@ private:
 
 
 };
+#endif // !GAME_H

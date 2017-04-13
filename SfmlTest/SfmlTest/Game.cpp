@@ -81,8 +81,7 @@ void Game::Draw() {
 	//Draw Debug Info
 	GameWindow.draw(FpsText);
 	GameWindow.draw(UpdatesText);
-
-
+	
 	//Referenz von GameWindow wird übergegeben
 	//ein Objekt zeichnet alles
 	if (GameState == Menu)
@@ -98,6 +97,8 @@ void Game::setDebugText() {
 		std::cerr << "Error Loading Font" << std::endl;
 	}
 	else {
+		//TODO Funktion kleiner machen
+		//Doppeltes ausführen von gleichen Befehlen
 		FpsText.setFont(DebugFont);
 		FpsText.setCharacterSize(DebugFontSize);
 		FpsText.setFillColor(DebugTextColor);

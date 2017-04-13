@@ -1,10 +1,8 @@
 #pragma once
+#ifndef ENTITY_H
+#define ENTITY_H
 
-#include <SFML/System.hpp>
-#include <SFML/Window.hpp>
-#include <SFML/Graphics.hpp>
-
-#include "Enums.hpp"
+#include "Variables.hpp"
 
 class Entity {
 public:
@@ -49,3 +47,4 @@ protected:
 private:
 
 };
+#endif // !ENTITY_H

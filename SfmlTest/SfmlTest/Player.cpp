@@ -1,13 +1,7 @@
 #include "Player.hpp"
-#include <iostream>
 
 Player::Player() {
 	Velocity = 5.f;
-
-}
-
-Player::Player(sf::Vector2f startingPosition) {
-	Position = startingPosition;	
 }
 
 Player::~Player() {
@@ -15,10 +9,8 @@ Player::~Player() {
 }
 
 void Player::Update(sf::RenderWindow &GameWindow, GameState &GameState) {
-	if (Position.x > 0 && Position.x < 800 &&
-		Position.y > 0 && Position.y < 600)
-		Move();
-	
+	Move();
+
 }
 
 void Player::Draw(sf::RenderWindow &GameWindow) {
@@ -26,12 +18,12 @@ void Player::Draw(sf::RenderWindow &GameWindow) {
 }
 
 void Player::Move() {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W) && Position.y > 0)
 		setPosition(sf::Vector2f(Position.x, Position.y - Velocity));
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S) && Position.y <= 900 - Size.y)
 		setPosition(sf::Vector2f(Position.x, Position.y + Velocity));
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A) && Position.x >= 0)
 		setPosition(sf::Vector2f(Position.x - Velocity, Position.y));
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D))
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D) && Position.x <= 1200 - Size.x)
 		setPosition(sf::Vector2f(Position.x + Velocity, Position.y));
 }
