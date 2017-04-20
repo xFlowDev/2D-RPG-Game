@@ -1,16 +1,16 @@
 #include "TilesetManager.hpp"
 
-void TilesetManager::loadTexture() {
-	if (!tilesetTexture.loadFromFile(tilesetPath)) {
+void TilesetManager::loadTexture(sf::Texture &texture) {
+	if (!texture.loadFromFile(tilesetPath)) {
 		std::cerr << "Fehler beim Laden des Tileset" << std::endl;
 	}
 }
 
-sf::Sprite TilesetManager::getSprite(int x, int y) {
+sf::Sprite TilesetManager::getSprite(int x, int y, sf::Texture &texture) {
 	//Lade den Teil des Tileset welche angefordert wurde
 	//Hole Tile von Position x y
 	sf::Sprite sprite;
-	sprite.setTexture(tilesetTexture);
+	sprite.setTexture(texture);
 	sprite.setTextureRect(sf::IntRect(x * tileSize, y * tileSize, tileSize, tileSize));
 	return sprite;
 }
@@ -23,8 +23,9 @@ sf::Sprite TilesetManager::getSprite(int x, int y, int width, int height) {
 	return sprite;
 }
 
-sf::Sprite TilesetManager::getSpriteFromPath(std::string path) {
-	sf::Texture texture;
+///Lade das gesamte File
+sf::Sprite TilesetManager::getSpriteFromPath(std::string path, sf::Texture &texture) {
+	
 	sf::Sprite sprite;
 	if (!texture.loadFromFile(path))
 		std::cerr << "Fehler beim Laden von: " << path << std::endl;

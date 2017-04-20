@@ -3,21 +3,14 @@
 #define MAP_H
 
 #include "Variables.hpp"
+#include "TilesetManager.hpp"
 
 class Map {
 public:
-	Map();
-
-	void Update(sf::RenderWindow &, GameState &);
-	void Draw(sf::RenderWindow &);
-
-	void loadMap(std::string);
-
+	Map(std::string, sf::Texture &, TilesetManager *);
+	std::vector<std::vector<sf::Sprite>> getMap();
 private:
-	float x, y;
-	sf::Vector2f Size;
-	
-	const std::string tilesetFilename = "tileset.png";
-	std::string mapFilename;
+	sf::Vector2u Size;
+	std::vector<std::vector<sf::Sprite>> map;
 };
 #endif // !MAP_H

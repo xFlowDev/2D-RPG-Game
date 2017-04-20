@@ -15,11 +15,10 @@ public:
 private:
 	bool isInitialzed = false;
 
-	TilesetManager *tilesetManagerPtr = nullptr;
-	sf::Sprite test;
-	
+	sf::Texture tileset_texture;
+
 	Player player;
-	Map map;
+	std::vector<std::vector<sf::Sprite>> map_sprites;
 
 	void Init();
 };

@@ -76,18 +76,33 @@ void Game::Update() {
 
 //Jede Klasse zeichnet ihren eigenen Kram
 void Game::Draw() {
-	GameWindow.clear();
+	GameWindow.clear();	
+	//Referenz von GameWindow wird übergegeben
+	//ein Objekt zeichnet alles
+	switch (GameState)
+	{
+	case Menu:
+		menuScreen.Draw(GameWindow);
+		break;
+	case Options:
+		//optionsScreen.Update(GameWindow, GameState);
+		break;
+	case Playing:
+		gameScreen.Draw(GameWindow);
+		break;
+	case Pause:
+		break;
+	case Exit:
+		GameWindow.close();
+		break;
+	default:
+		break;
+	}
+
 
 	//Draw Debug Info
 	GameWindow.draw(FpsText);
 	GameWindow.draw(UpdatesText);
-	
-	//Referenz von GameWindow wird übergegeben
-	//ein Objekt zeichnet alles
-	if (GameState == Menu)
-		menuScreen.Draw(GameWindow);
-	else if (GameState == Playing)
-		gameScreen.Draw(GameWindow);
 
 	GameWindow.display();
 }

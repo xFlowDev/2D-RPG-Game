@@ -11,10 +11,11 @@ public:
 	MenuScreen();
 	void Update(sf::RenderWindow &, GameState&);
 	void Draw(sf::RenderWindow &);
-	//void Init();
 	void placeButton(sf::RectangleShape &, sf::Color, sf::Vector2f);
 
 private:
+	bool isInitialized = false;
+
 	const int TitleCharSize = 150;
 	const std::string GameTitle = "Game";
 	sf::Font TitleFont;
@@ -26,6 +27,8 @@ private:
 	sf::RectangleShape PlayButton;
 	sf::RectangleShape OptionsButton;
 	sf::RectangleShape ExitButton;
+
+	void Init();
 
 	bool isButtonPressed(sf::RectangleShape, sf::RenderWindow &);
 

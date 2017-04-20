@@ -7,15 +7,14 @@
 class TilesetManager
 {
 public:
-	void loadTexture();
+	void loadTexture(sf::Texture &);
 
-	sf::Sprite getSprite(int, int);
+	sf::Sprite getSprite(int, int, sf::Texture &);
 	sf::Sprite getSprite(int, int, int, int);
-	sf::Sprite getSpriteFromPath(std::string);
-private:	
+	sf::Sprite getSpriteFromPath(std::string, sf::Texture &);
+private:
 	const int tileSize = 32;
 	const std::string tilesetPath = "Assets\\Tilesets\\tileset.png";
-	sf::Texture tilesetTexture;
 };
 
 

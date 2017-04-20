@@ -167,6 +167,14 @@ Gras:
     - Hex: 009102
     - RGB: 0, 145, 2
 
-
-
 # [13.04.17]
+
+# [20.04.17]
+Irgendwie tritt Fehler beim Laden des Fonts auf wenn ich versuche die Map zu erzeugen
+Problem dabei ist ich kann die Konsole nicht benutzen.
+[TODO] Debugnachrichten ebenfalls im Spiel aus geben
+TODO bleibt bestehen, obwohl ich das Problem gelöst habe
+Ich muss beim Output daran denken den << Operator zwischen verschiedene Datentypen zu schreiben
+Sonst adiert er die Werte. In meinem Fall hat er versucht u_int und string zu addieren und dabei kam etwas sehr seltsames raus.
+
+# [20.04.17]
