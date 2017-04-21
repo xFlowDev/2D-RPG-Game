@@ -29,7 +29,11 @@ Map::Map(std::string file, sf::Texture &texture, TilesetManager *tileset_manager
 	}
 }
 
-std::vector<std::vector<sf::Sprite>> Map::getMap()
+std::vector<std::vector<sf::Sprite>> Map::getMapSprites()
 {
 	return map;
+}
+
+sf::Vector2u Map::getMapSize() {
+	return Size;
 }

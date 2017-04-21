@@ -39,9 +39,9 @@ void MenuScreen::Init() {
 	ButtonSize.y = 100;
 	float spaceBetweenButtons = 50;
 	float vertSplit = 3;
-	placeButton(PlayButton, sf::Color::Red, sf::Vector2f(WIDTH / 2 - ButtonSize.x / 2, HEIGHT / vertSplit));
-	placeButton(OptionsButton, sf::Color::Green, sf::Vector2f(WIDTH / 2 - ButtonSize.x / 2, HEIGHT / vertSplit + ButtonSize.y + spaceBetweenButtons));
-	placeButton(ExitButton, sf::Color::Blue, sf::Vector2f(WIDTH / 2 - ButtonSize.x / 2, HEIGHT / vertSplit + (2 * ButtonSize.y) + spaceBetweenButtons * 2));
+	placeButton(PlayButton, sf::Color::Red, sf::Vector2f(WINDOW_WIDTH / 2 - ButtonSize.x / 2, WINDOW_HEIGHT / vertSplit));
+	placeButton(OptionsButton, sf::Color::Green, sf::Vector2f(WINDOW_WIDTH / 2 - ButtonSize.x / 2, WINDOW_HEIGHT / vertSplit + ButtonSize.y + spaceBetweenButtons));
+	placeButton(ExitButton, sf::Color::Blue, sf::Vector2f(WINDOW_WIDTH / 2 - ButtonSize.x / 2, WINDOW_HEIGHT / vertSplit + (2 * ButtonSize.y) + spaceBetweenButtons * 2));
 	isInitialized = true;
 }
 
@@ -75,7 +75,7 @@ void MenuScreen::setTitleText()
 		TitleText.setCharacterSize(TitleCharSize);
 		//damit die Width berechnet werden kann, müssen String, Font und CharSize vorher festgelegt werden
 		float textWidth = TitleText.getLocalBounds().width;
-		TitlePosition = sf::Vector2f(WIDTH / 2.f - textWidth / 2.f, 0);
+		TitlePosition = sf::Vector2f(WINDOW_WIDTH / 2.f - textWidth / 2.f, 0);
 		TitleText.setPosition(TitlePosition);
 		TitleText.setFillColor(TitleTextColor);
 	}

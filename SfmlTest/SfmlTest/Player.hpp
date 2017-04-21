@@ -11,7 +11,11 @@ public:
 
 	void Update(sf::RenderWindow &, GameState &) override;
 	void Draw(sf::RenderWindow &) override;
+
+	//float &, float &, float &, float &
+	void Move(sf::Vector2f &);
 private:
-	void Move();
+	sf::Vector2f view_boundries_bottom_right;
+	sf::Vector2f view_boundries_top_left;
 };
 #endif // !PLAYER_H

@@ -1,7 +1,7 @@
 #include "Game.hpp"
 
 Game::Game() {
-	GameWindow.create(sf::VideoMode(WIDTH, HEIGHT), "2D RPG Rougelike");
+	GameWindow.create(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "2D RPG Rougelike");
 	GameState = Menu;
 	setDebugText();
 }
@@ -88,7 +88,7 @@ void Game::Draw() {
 		//optionsScreen.Update(GameWindow, GameState);
 		break;
 	case Playing:
-		gameScreen.Draw(GameWindow);
+		gameScreen.Draw();
 		break;
 	case Pause:
 		break;
