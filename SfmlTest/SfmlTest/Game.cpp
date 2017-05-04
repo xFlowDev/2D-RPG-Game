@@ -11,10 +11,10 @@ Game::~Game() {
 
 void Game::GameLoop() {
 	timer = std::chrono::high_resolution_clock::now();
-	dt = 0.016666666666666667;
+	dt = 0.016666666666666667f;
 
 	currentTime = std::chrono::high_resolution_clock::now();
-	accumulator = 0.0;
+	accumulator = 0.0f;
 
 	while (GameWindow.isOpen())
 	{
@@ -53,32 +53,34 @@ void Game::GameLoop() {
 //Jede Klasse ist für ihre eigenen Updates zuständig
 //GameWindow muss mitgegeben werden damit ich zugriff auf die Maus-Position relativ zum GameWindow habe
 void Game::Update() {
+	view = GameWindow.getView();
+	setDebugTextPosition();
+
 	switch (GameState)
 	{
-		case Menu:
-			menuScreen.Update(GameWindow, GameState);
-			break;
-		case Options:
-			//optionsScreen.Update(GameWindow, GameState);
-			break;
-		case Playing:
-			gameScreen.Update(GameWindow, GameState);
-			break;
-		case Pause:
-			break;
-		case Exit:
-			GameWindow.close();
-			break;
-		default:
-			break;
+	case Menu:
+		menuScreen.Update(GameWindow, GameState);
+		break;
+	case Options:
+		//optionsScreen.Update(GameWindow, GameState);
+		break;
+	case Playing:
+		gameScreen.Update(GameWindow, GameState);
+		break;
+	case Pause:
+		break;
+	case Exit:
+		GameWindow.close();
+		break;
+	default:
+		break;
 	}
 }
 
 //Jede Klasse zeichnet ihren eigenen Kram
 void Game::Draw() {
-	GameWindow.clear();	
-	//Referenz von GameWindow wird übergegeben
-	//ein Objekt zeichnet alles
+	GameWindow.clear();
+
 	switch (GameState)
 	{
 	case Menu:
@@ -99,8 +101,6 @@ void Game::Draw() {
 		break;
 	}
 
-
-	//Draw Debug Info
 	GameWindow.draw(FpsText);
 	GameWindow.draw(UpdatesText);
 
@@ -118,9 +118,19 @@ void Game::setDebugText() {
 		FpsText.setCharacterSize(DebugFontSize);
 		FpsText.setFillColor(DebugTextColor);
 		FpsText.setPosition(FpsTextPosition);
+
 		UpdatesText.setFont(DebugFont);
 		UpdatesText.setCharacterSize(DebugFontSize);
 		UpdatesText.setFillColor(DebugTextColor);
 		UpdatesText.setPosition(UpdatesTextPosition);
 	}
+}
+
+void Game::setDebugTextPosition() {
+	sf::Vector2f view_center = view.getCenter();
+	float x = view_center.x - WINDOW_WIDTH / 2;
+	float y = view_center.y - WINDOW_HEIGHT / 2;
+
+	UpdatesText.setPosition(UpdatesTextPosition + sf::Vector2f(x, y));
+	FpsText.setPosition(FpsTextPosition + sf::Vector2f(x, y));
 }

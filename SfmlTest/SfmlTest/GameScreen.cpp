@@ -47,13 +47,13 @@ void GameScreen::Init(sf::RenderWindow *window)
 void GameScreen::move_view() {
 	auto player_pos = player.getPosition();
 	auto view_pos = view.getCenter();
-	
-	float top, left, bottom, right;	
+
+	float top, left, bottom, right;
 	top = (view_pos.y - (WINDOW_HEIGHT / 2)) + view_move_distance;
 	left = (view_pos.x - (WINDOW_WIDTH / 2)) + view_move_distance;
 	bottom = (view_pos.y + (WINDOW_HEIGHT / 2)) - view_move_distance;
 	right = (view_pos.x + (WINDOW_WIDTH / 2)) - view_move_distance;
-	
+
 	//TODO Wenn der View bewegt wird bleiben die Debug angaben immer an der selben stelle
 
 	if (player_pos.y <= top)

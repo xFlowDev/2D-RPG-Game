@@ -16,7 +16,7 @@ public:
 	void GameLoop();
 private:
 	sf::RenderWindow GameWindow;
-
+	sf::View view;
 	GameState GameState;
 	MenuScreen menuScreen;
 	GameScreen gameScreen;
@@ -45,7 +45,7 @@ private:
 	void Draw();
 
 	void setDebugText();
-
+	void setDebugTextPosition();
 
 };
 #endif // !GAME_H

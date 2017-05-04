@@ -9,7 +9,6 @@ public:
 	Player();
 	~Player();
 
-	void Update(sf::RenderWindow &, GameState &) override;
 	void Draw(sf::RenderWindow &) override;
 
 	//float &, float &, float &, float &

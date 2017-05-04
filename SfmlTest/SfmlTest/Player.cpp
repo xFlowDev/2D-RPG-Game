@@ -8,15 +8,10 @@ Player::~Player() {
 
 }
 
-void Player::Update(sf::RenderWindow &GameWindow, GameState &GameState) {
-
-}
-
 void Player::Draw(sf::RenderWindow &GameWindow) {
 	GameWindow.draw(Sprite);
 }
 
-// float &top_boundary, float &left_boundary, float &bottom_boundary, float &rigth_boundary
 void Player::Move(sf::Vector2f &map_size) {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W) && Position.y > 0)
 		setPosition(sf::Vector2f(Position.x, Position.y - Velocity));
