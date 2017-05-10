@@ -178,3 +178,11 @@ Ich muss beim Output daran denken den << Operator zwischen verschiedene Datentyp
 Sonst adiert er die Werte. In meinem Fall hat er versucht u_int und string zu addieren und dabei kam etwas sehr seltsames raus.
 
 # [20.04.17]
+
+# [05.05.17]
+[NOTE] Debug Text wird nun auch mit dem View bewegt
+
+[TODO] Inventory-System implementieren
+
+
+# [05.05.17]

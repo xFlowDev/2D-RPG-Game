@@ -7,9 +7,9 @@ Map::Map(std::string file, sf::Texture &texture, TilesetManager *tileset_manager
 	}
 	else {
 		Size = map_image.getSize();
-		for (auto y = 0; y < Size.y; y++) {
+		for (unsigned int y = 0; y < Size.y; y++) {
 			std::vector<sf::Sprite> row;
-			for (auto x = 0; x < Size.x; x++) {
+			for (unsigned int x = 0; x < Size.x; x++) {
 				sf::Sprite sprite;
 				sf::Color color = map_image.getPixel(x, y);
 				if (color == GRAS) {
@@ -18,10 +18,19 @@ Map::Map(std::string file, sf::Texture &texture, TilesetManager *tileset_manager
 				else if (color == WASSER) {
 					sprite = tileset_manager->getSprite(1, 0, texture);
 				}
-				else if (color == RAND) {
-					sprite = tileset_manager->getSprite(2, 0, texture);
+				else if (color == RAND_OBEN) {
+					sprite = tileset_manager->getSprite(7, 2, texture);
 				}
-				sprite.setPosition(x * 32, y * 32);
+				else if (color == RAND_LINKS) {
+					sprite = tileset_manager->getSprite(8, 1, texture);
+				}
+				else if (color == RAND_UNTEN) {
+					sprite = tileset_manager->getSprite(7, 0, texture);
+				}
+				else if (color == RAND_RECHTS) {
+					sprite = tileset_manager->getSprite(6, 1, texture);
+				}
+				sprite.setPosition((float) x * 32, (float) y * 32);
 				row.push_back(sprite);
 			}
 			map.push_back(row);

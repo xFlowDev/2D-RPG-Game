@@ -5,6 +5,15 @@
 #include "Variables.hpp"
 #include "TilesetManager.hpp"
 
+#define GRAS sf::Color(0, 145, 2)
+
+#define RAND_OBEN sf::Color(145, 90, 42)
+#define RAND_LINKS sf::Color(145, 90, 43)
+#define RAND_UNTEN sf::Color(145, 90, 44)
+#define RAND_RECHTS sf::Color(145, 90, 45)
+
+#define WASSER sf::Color(33, 70, 255)
+
 class Map {
 public:
 	Map(std::string, sf::Texture &, TilesetManager *);
