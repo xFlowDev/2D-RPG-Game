@@ -11,6 +11,10 @@
 #define RAND_LINKS sf::Color(145, 90, 43)
 #define RAND_UNTEN sf::Color(145, 90, 44)
 #define RAND_RECHTS sf::Color(145, 90, 45)
+#define ECKE_LINKS_OBEN sf::Color(145, 91, 42)
+#define ECKE_LINKS_UNTEN sf::Color(145, 92, 42)
+#define ECKE_RECHTS_OBEN sf::Color(145, 93, 42)
+#define ECKE_RECHTS_UNTEN sf::Color(145, 94, 42)
 
 #define WASSER sf::Color(33, 70, 255)
 

@@ -13,7 +13,7 @@ Map::Map(std::string file, sf::Texture &texture, TilesetManager *tileset_manager
 				sf::Sprite sprite;
 				sf::Color color = map_image.getPixel(x, y);
 				if (color == GRAS) {
-					sprite = tileset_manager->getSprite(0, 0, texture);					
+					sprite = tileset_manager->getSprite(0, 0, texture);
 				}
 				else if (color == WASSER) {
 					sprite = tileset_manager->getSprite(1, 0, texture);
@@ -30,7 +30,22 @@ Map::Map(std::string file, sf::Texture &texture, TilesetManager *tileset_manager
 				else if (color == RAND_RECHTS) {
 					sprite = tileset_manager->getSprite(6, 1, texture);
 				}
-				sprite.setPosition((float) x * 32, (float) y * 32);
+				else if (color == ECKE_LINKS_OBEN) {
+					sprite = tileset_manager->getSprite(9, 0, texture);
+				}
+				else if (color == ECKE_LINKS_UNTEN) {
+					sprite = tileset_manager->getSprite(5, 2, texture);
+				}
+				else if (color == ECKE_RECHTS_OBEN) {
+					sprite = tileset_manager->getSprite(9, 1, texture);
+				}
+				else if (color == ECKE_RECHTS_UNTEN) {
+					sprite = tileset_manager->getSprite(5, 1, texture);
+				}
+
+
+
+				sprite.setPosition((float)x * 32, (float)y * 32);
 				row.push_back(sprite);
 			}
 			map.push_back(row);
